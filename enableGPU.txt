@@ -1,0 +1,4 @@
+$pnpdevs = Get-PnpDevice | Where-Object {$_.Present -eq $true} | Where-Object {$_.Class -eq "Display"}
+$pnpdevs
+$locationpath = ($pnpdevs[2] | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
+
