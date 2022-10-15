@@ -5,5 +5,5 @@ $ppsrch | Out-File -FilePath ./pci.txt
 $ppsrch[11]
 
 $locationpath = ($ppsrch[11] | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
-Remove-VMAssignableDevice -location $locationpath -vmname WarThunder
+Remove-VMAssignableDevice -location $locationpath -vmname $vmname
 Mount-VmHostAssignableDevice -locationpath $locationpath
